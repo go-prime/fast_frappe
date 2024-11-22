@@ -9,6 +9,8 @@ app_color = "grey"
 app_email = "support@castlecraft.in"
 app_license = "MIT"
 
+required_apps = ["restaurant"]
+
 # Includes in <head>
 # ------------------
 
