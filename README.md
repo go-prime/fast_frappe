@@ -11,6 +11,8 @@ Use example to build serverless function using frappe framework.
 - Connection to same mariadb, redis that the `frappe-bench` connects to.
 - Access to `sites` directory of the `frappe-bench`
 - Valid site to set it as `SITE_NAME` environment variable.
+- You will also need the latest version of https://github.com/go-prime/restaurant.
+- Use the branch restaurant-pos-prod
 
 ### Installation
 
@@ -41,6 +43,21 @@ SITE_NAME=function.local uvicorn fast_frappe.main:app --port 3000
 ```
 curl -s http://localhost:3000 | jq .
 ```
+
+### Project Structure
+
+fast_frappe/
+├── __init__.py
+├── config/
+├── controllers/ # endpoints imported from this folder
+├── ctrl.py
+├── fast_frappe/
+├── hooks.py
+├── main.py # We will import routes into the main app here
+├── modules.txt
+├── patches.txt
+├── serializers/ Houses our serializers for validation
+└── templates/
 
 ### Containerized
 
