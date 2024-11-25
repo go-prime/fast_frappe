@@ -10,15 +10,15 @@ from fast_frappe.serializers.orders import Order
 router = APIRouter()
 
 
-@router.get('/get_orders/{server_id}')
-def get_orders(server_id: str):
+@router.get('/get_orders/')
+def get_orders(server_id: str | None = None):
     """
     Retrieve an orders filtered per Server.
 
-    - **server_id**: The ID of the server with which to filter orders to retrieve.
+    - **server_id**: The ID of the server with which to filter orders to retrieve. Optional.
     """
     init_frappe()
-    data = fetch_orders(server_id=server_id)
+    data = fetch_orders(server_id=None)
     return JSONResponse(content=data)
 
 

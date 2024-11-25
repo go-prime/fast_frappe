@@ -29,7 +29,7 @@ class Order(BaseModel):
     subtotal: float = Field(..., alias="subtotal", description="The subtotal of the order")
     tax: float = Field(..., alias="tax", description="The tax of the order")
     total: float = Field(..., alias="total", description="The total of the order")
-    server: str = Field(..., alias="server", description="The server who took the order")
+    server: Optional[str] = Field(..., alias="server", description="The server who took the order")
     payment_status: str = Field(..., alias="payment_status", description="The payment status of the order", pattern="^(Ordered|Paid|Refunded)$")
     source_warehouse: Optional[str] = Field(None, alias="source_warehouse", description="The source warehouse for the order")
     

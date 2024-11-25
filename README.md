@@ -59,6 +59,10 @@ fast_frappe/
 ├── serializers/ Houses our serializers for validation
 └── templates/
 
+## Work Flow
+All the queries to be done in restaurant app in functions place in restaurant/apps/restaurant/restaurant/public_api.py
+These functions will be called in this application from controllers folder
+
 ### Containerized
 
 Build
