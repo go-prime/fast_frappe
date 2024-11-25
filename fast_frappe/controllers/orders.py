@@ -18,7 +18,7 @@ def get_orders(server_id: str | None = None):
     - **server_id**: The ID of the server with which to filter orders to retrieve. Optional.
     """
     init_frappe()
-    data = fetch_orders(server_id=None)
+    data = fetch_orders(server_id=server_id)
     return JSONResponse(content=data)
 
 
